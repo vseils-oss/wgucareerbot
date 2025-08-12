@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+<category>
+  <pattern>HELLO</pattern>
+  <template>Hi. Type START to take a short CS career quiz.</template>
+</category>
+
+<category>
+  <pattern>START</pattern>
+  <template>
+    Q1: What sounds most interesting? 1) Coding  2) Data  3) Security  4) UX  5) Cloud
+    <think><set name="stage">q1</set></think>
+  </template>
+</category>
+
+<category>
+  <pattern>1</pattern>
+  <template>
+    <condition name="stage">
+      <li value="q1"><think><set name="q1">1</set><set name="stage">q2</set></think>Q2: Which fits best? 1) Algorithms  2) Analytics  3) Defend  4) User flows  5) Infra</li>
+      <li value="q2"><think><set name="q2">1</set><set name="stage">q3</set></think>Q3: Work style? 1) Team  2) Solo  3) Mix</li>
+      <li value="q3"><think><set name="q3">1</set></think><srai>RECOMMEND</srai></li>
+      <li>Type START to begin.</li>
+    </condition>
+  </template>
+</category>
+
+<category>
+  <pattern>2</pattern>
+  <template>
+    <condition name="stage">
+      <li value="q1"><think><set name="q1">2</set><set name="stage">q2</set></think>Q2: Which fits best? 1) Algorithms  2) Analytics  3) Defend  4) User flows  5) Infra</li>
+      <li value="q2"><think><set name="q2">2</set><set name="stage">q3</set></think>Q3: Work style? 1) Team  2) Solo  3) Mix</li>
+      <li value="q3"><think><set name="q3">2</set></think><srai>RECOMMEND</srai></li>
+      <li>Type START to begin.</li>
+    </condition>
+  </template>
+</category>
+
+<category>
+  <pattern>3</pattern>
+  <template>
+    <condition name="stage">
+      <li value="q1"><think><set name="q1">3</set><set name="stage">q2</set></think>Q2: Which fits best? 1) Algorithms  2) Analytics  3) Defend  4) User flows  5) Infra</li>
+      <li value="q2"><think><set name="q2">3</set><set name="stage">q3</set></think>Q3: Work style? 1) Team  2) Solo  3) Mix</li>
+      <li value="q3"><think><set name="q3">3</set></think><srai>RECOMMEND</srai></li>
+      <li>Type START to begin.</li>
+    </condition>
+  </template>
+</category>
+
+<category>
+  <pattern>4</pattern>
+  <template>
+    <condition name="stage">
+      <li value="q1"><think><set name="q1">4</set><set name="stage">q2</set></think>Q2: Which fits best? 1) Algorithms  2) Analytics  3) Defend  4) User flows  5) Infra</li>
+      <li value="q2"><think><set name="q2">4</set><set name="stage">q3</set></think>Q3: Work style? 1) Team  2) Solo  3) Mix</li>
+      <li value="q3">Please enter 1-3 for Q3.</li>
+      <li>Type START to begin.</li>
+    </condition>
+  </template>
+</category>
+
+<category>
+  <pattern>5</pattern>
+  <template>
+    <condition name="stage">
+      <li value="q1"><think><set name="q1">5</set><set name="stage">q2</set></think>Q2: Which fits best? 1) Algorithms  2) Analytics  3) Defend  4) User flows  5) Infra</li>
+      <li value="q2"><think><set name="q2">5</set><set name="stage">q3</set></think>Q3: Work style? 1) Team  2) Solo  3) Mix</li>
+      <li value="q3">Please enter 1-3 for Q3.</li>
+      <li>Type START to begin.</li>
+    </condition>
+  </template>
+</category>
+
+<category>
+  <pattern>RECOMMEND</pattern>
+  <template>
+    <condition name="q1">
+      <li value="1">Result: Software Engineer</li>
+      <li value="2">Result: Data Analyst/Scientist</li>
+      <li value="3">Result: Cybersecurity</li>
+      <li value="4">Result: UX Designer</li>
+      <li value="5">Result: Cloud/DevOps</li>
+      <li>Try START.</li>
+    </condition>
+    Type START to try again.
+  </template>
+</category>
+
+<category>
+  <pattern>*</pattern>
+  <template>
+    <condition name="stage">
+      <li value="q1">Enter 1-5 for Q1.</li>
+      <li value="q2">Enter 1-5 for Q2.</li>
+      <li value="q3">Enter 1-3 for Q3.</li>
+      <li>Type START to begin.</li>
+    </condition>
+  </template>
+</category>
+
+<category>
+    <pattern></pattern>
+    <template></template>
+</category>
+</aiml>
